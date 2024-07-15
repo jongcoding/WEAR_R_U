@@ -23,6 +23,7 @@ from WEAR_R_U.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include("users.urls")),
+    path('posts/', include('posts.urls')),
     path("", index),
 ]
 urlpatterns +=static (
