@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 10, 10, 10;
+    --background-end-rgb: 10, 10, 10;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)), 
+    rgb(var(--background-end-rgb))
+  );
+  /* background: linear-gradient(to right, #ffb48f, #ffa376, #ff9662, #ff7d5f, #ff7258); */
+  animation: gradient 5s ease infinite;
+  color: rgb(var(--foreground-rgb));
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+input {
+  color : black;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+button {
+  color : black;
+  background-color: #F5ECCE;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+}
+
+button:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+  color: black;
+}
+
+button:active {
+  animation: clickAnimation 0.5s ease;
+}
+.button {
+  animation: gradient 5s ease infinite;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  color: black;
+}
+
+.button:active {
+  animation: clickAnimation 0.5s ease;
+}
+
+@keyframes clickAnimation {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
